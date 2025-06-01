@@ -1,0 +1,203 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% LaTeX Template
+% Version 3.0 (December 17, 2022)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Author:
+% Vel (vel@latextemplates.com)
+%
+% Original author:
+% Trey Hunner (http://www.treyhunner.com/)
+%
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-----------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%-----------------------------------------------------------------
+
+\documentclass[
+	10.5pt, % Default font size, can use 10pt, 11pt or 12pt
+]{resume} % Use the resume class
+
+\usepackage{ebgaramond} % Use the EB Garamond font
+\usepackage{hyperref}
+\usepackage{fontawesome}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+
+\usepackage{ifthen}
+
+% Define role and clearance flags
+\newboolean{Frontend}
+\newboolean{Backend}
+\newboolean{Data}
+\newboolean{Clearance}
+
+% Default: all false
+\setboolean{Frontend}{false}
+\setboolean{Backend}{false}
+\setboolean{Data}{false}
+\setboolean{Clearance}{false}
+
+\input{config.tex}
+
+%------------------------------------------------
+
+\name{Michael T. Moen} % Your name to appear at the top
+
+% \address{St. Louis, MO \\ moenmichael02@gmail.com \\ (636) 633-3173 \\ \underline{\href{https://www.linkedin.com/in/mtmoen/}{in/mtmoen/}} \\ \underline{\href{https://github.com/MoenMi}{github.com/MoenMi}} \\ \underline{\href{https://mtmoen.com}{mtmoen.com}}}
+
+\address{St. Louis, MO \\ moenmichael02@gmail.com \\ (XXX) XXX-XXXX \\ \underline{\href{https://www.linkedin.com/in/mtmoen/}{linkedin.com/in/mtmoen/}}}
+
+\ifthenelse{\boolean{Clearance}}{
+	\address{U.S. Citizen \\ Active Top Secret Clearance with SCI (TS/SCI)}
+}{}
+
+%-----------------------------------------------------------------
+
+\begin{document}
+
+%-----------------------------------------------------------------
+%	EDUCATION SECTION
+%-----------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+	% \textbf{The University of Alabama}, \textit{M.S. in Applied Statistics, Tuscaloosa, AL} - 3.67/4.00 GPA \hfill May 2026
+
+	% \textbf{The University of Alabama} \hfill May 2026 \\
+	% \textit{M.S. in Applied Statistics} - 3.67/4.00 GPA \hfill \textit{Tuscaloosa, AL}
+	% \vspace{-0.2em}
+	% \begin{rEducation}{M.S. in Applied Statistics}{The University of Alabama}{Tuscaloosa, AL}{3.67/4.00}{May 2026}
+	% \end{rEducation}
+	
+	% \textbf{The University of Alabama}, \textit{Honors B.S. in Computer Science \& Mathematics, Tuscaloosa, AL} - 3.89/4.00 GPA \hfill May 2026
+	% \vspace{-0.2em}
+	
+	% \textbf{The University of Alabama} \hfill May 2026 \\
+	% \textit{Honors B.S. in Computer Science \& Mathematics} - 3.89/4.00 GPA \hfill \textit{Tuscaloosa, AL} \\
+	% National Merit Scholarship Recipient (5 years full tuition, 4 years housing + stipend)
+	% \vspace{-0.2em}
+	
+	\begin{rEducation}{M.S. in Applied Statistics}{The University of Alabama}{Tuscaloosa, AL}{3.67/4.00}{May 2026}
+	\end{rEducation}
+	
+	\begin{rEducation}{B.S. in Computer Science \& Mathematics}{The University of Alabama}{Tuscaloosa, AL}{3.89/4.00}{May 2026}
+	\end{rEducation}
+	% \begin{rEducation2}{B.S. in Computer Science \& Mathematics}{The University of Alabama}{Tuscaloosa, AL}{3.89/4.00}{May 2026}
+	% 	\item National Merit Scholar, Accelerated Masters Program, Honors College, Pi Mu Epsilon
+	% \end{rEducation2}
+
+	\vspace{0.25em}
+	
+\end{rSection}
+
+%-----------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%-----------------------------------------------------------------
+
+\begin{rSection}{Experience}
+
+	\begin{rSubsection2}{The University of Alabama Libraries}{January 2023 - Present}{Research Computing Student Lead}{Tuscaloosa, AL}
+		\item Provide software development and data analysis support; assist with coding in Python, C++, R, Java, HTML, CSS, and more.
+		\item Publish 20+ tutorials on accessing and analyzing REST APIs using Python and R, managing and reviewing GitHub Pages site content.
+		\item Design and teach workshops covering programming, data analysis, and machine learning using Python, R, and scikit-learn.
+		\item Built a full-stack web application using a Python Flask backend and a JavaScript, HTML, and CSS frontend for retrieving CEO pay data.
+	\end{rSubsection2}
+
+	\begin{rSubsection2}{Veterans United Home Loans}{May 2025 - Present}{MLOps Engineer Intern}{Remote}
+		\item Use Python FastAPI to develop and maintain tools for machine learning (ML) model deployment and development.
+		\item Develop and maintain scalable ML infrastructure using Docker, Kubernetes, SQLAlchemy, Azure, and Grafana.
+	\end{rSubsection2}
+
+	\ifthenelse{\boolean{Frontend}}{
+		\begin{rSubsection2}{Bowfin Tech}{January 2025 - May 2025}{Web Developer Intern}{Remote}
+			\item Built a client's website using WordPress and Elementor, implementing responsive web design for mobile and desktop users.
+			\item Implemented user tracking by integrating Google Tag Manager and Google Analytics with Google Ads and Meta Pixel.
+		\end{rSubsection2}
+	}{}
+
+	\begin{rSubsection2}{Northrop Grumman}{June 2024 - August 2024}{Cyber Software Engineer Intern}{San Antonio, TX}
+		\item Automated the installation and updating of applications on 20+ Windows workstations on an air-gapped network by writing an Ansible playbook and PowerShell script, saving roughly 90 hours of manual updates per month.
+		\item Drafted a white paper for a Docker infrastructure to securely process files using multiple containers, reducing data transfer costs.
+		\item Configured a persistent SMB mount with Kerberos authentication in Red Hat Enterprise Linux.
+		\item Gained experience with Agile practices by participating in scrum meetings, sprint planning, and sprint retrospectives.
+    \end{rSubsection2}
+
+	\begin{rSubsection2}{National Geospatial-Intelligence Agency}{June 2023 - August 2023}{Software Engineer Intern}{St. Louis, MO}
+		\item Cleaned Jira backlog of 2400+ tickets using Python, eliminating 100+ duplicate items and creating visualizations of the data with matplotlib.
+		\item Redesigned a Confluence website, creating a more user-friendly design and adding the ability to search and view files in browser.
+		\item Automated an accounting procedure using Microsoft Excel, saving about 5 hours of manual work per month.
+	\end{rSubsection2}
+
+\end{rSection}
+
+%-----------------------------------------------------------------
+%	PROJECTS SECTION
+%-----------------------------------------------------------------
+
+\begin{rSection}{Projects}
+
+    % \begin{rProject}{UA Libraries Scholarly API Cookbook}{Python (Matplotlib, NumPy, Pandas, GeoPandas), R}{}
+    %     \item Published 20+ tutorials detailing how to access and analyze data from REST APIs for the University of Alabama Libraries.
+    %     \item Reviewed tutorials written by other student writers and proactively sought out new APIs to expand the site's coverage.
+    % \end{rProject}
+
+	\begin{rProject}{Personal Website}{React, HTML, CSS, Bootstrap}{mtmoen.com}
+		\item Designed a website using React, HTML, CSS, and Bootstrap to create a responsive, professional, and mobile-friendly interface.
+	\end{rProject}
+
+	\ifthenelse{\boolean{Data}}{
+		\begin{rProject}{Air Quality vs. Life Expectancy Analysis}{R, Python (Pandas)}{}
+			\item Analyzed U.S. county-level data to evaluate the relationship between air quality indicators and cause-specific mortality rates.
+			\item Joined and cleaned datasets from multiple sources using Python, performing exploratory data analysis and model diagnostics in R.
+			\item Built multiple linear regression models with variable selection and multicollinearity checks using R to identify key pollutants.
+		\end{rProject}
+	}{}
+
+	\ifthenelse{\boolean{Backend}}{
+		\begin{rProject}{Penny: An AI Chatbot Assistant for Saving Money}{Python (Flask, Plotly)}{}
+			\item Created an application using the OpenAI API and Python Flask to advise customers how to reduce spending based on their transactions.
+			\item Won 1st place out of ten teams in the Fintech category at the UA Innovate Hackathon, winning the \$1000 grand prize.
+		\end{rProject}
+	}{}
+
+	\ifthenelse{\boolean{Backend}}{
+		\begin{rProject}{CashCourse: A Financial Literacy Education Tool}{Python (FastAPI, Plotly)}{}
+			\item Used Python FastAPI endpoints to create Plotly figures, analyze documents, and customize educational materials with the OpenAI API.
+		\end{rProject}
+	}{}
+
+	\ifthenelse{\boolean{Backend}}{
+		\begin{rProject}{Data Structures Library}{C++}{}
+			\item Implemented circular dynamic arrays, red-black trees, and Fibonacci heaps in C++ using templates for compatibility with various classes.
+		\end{rProject}
+	}{}
+
+\end{rSection}
+
+%-----------------------------------------------------------------
+%	TECHNICAL STRENGTHS SECTION
+%-----------------------------------------------------------------
+
+\begin{rSection}{Skills}
+
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{@{} >{\bfseries}p{2.2cm} p{15.8cm} @{}}
+		Languages & Python, C++, R, JavaScript, HTML, CSS, SQL, LaTeX
+		% Libraries & NumPy, Pandas, Matplotlib, Flask, Plotly, GeoPandas \\
+		\\ Frameworks & FastAPI, scikit-learn, React, Flask, Bootstrap
+		\\ Tools & Git, GitHub, Linux, Jira, Confluence, WordPress, Microsoft Office
+		% \\ Statistics & Regression, Decision Trees, Neural Networks, Data Visualization, Hypothesis Testing
+		% \\ Development & Object-Oriented Programming, Full-Stack Web Development, Software Development, Geographic Information Systems (GIS), Agile Methodologies (Kanban, Scrum)
+	\end{tabular}
+
+\end{rSection}
+
+\end{document}
